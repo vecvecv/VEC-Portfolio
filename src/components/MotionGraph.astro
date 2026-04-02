@@ -3,6 +3,7 @@
 import FondoMar from './FondoMar.astro';
 import Peces from './Peces.astro';
 import fiction from '../assets/fiction-track.png';
+const base = import.meta.env.BASE_URL;
 ---
 
 <div id="container-projects">
@@ -18,7 +19,7 @@ import fiction from '../assets/fiction-track.png';
                 <p class="parrafo"> What if you could walk further without even realizing it?</p>
          
                 <section id="botones">
-                <a class="button" href={`${import.meta.env.BASE_URL}FictionTrack`}>Know More</a>
+                <a class="button" href={`${base}/FictionTrack`}>Know More</a>
            
             </section>     
 
