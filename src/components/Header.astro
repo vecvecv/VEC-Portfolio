@@ -1,15 +1,16 @@
 ---
 import vecLogoSmall from '../assets/logo-vec-small.png';
+const base = import.meta.env.BASE_URL;
 ---
 
 <header>
     <div class="logo">
-        <a href="/"
-				><img src={vecLogoSmall.src} width="107" height="63" alt="VECVECVEC" />
-			</a>
+        <a href={base}>
+            <img src={vecLogoSmall.src} width="107" height="63" alt="VECVECVEC" />
+        </a>
     </div>
     <nav>
-        <a href="../#container-projects">PROJECTS</a>
+        <a href={`${base}#container-projects`}>PROJECTS</a>
         <a href="#">ABOUT</a>
         <a href="mailto:valdiviezocristinae@gmail.com">CONTACT ME</a>
     </nav>
