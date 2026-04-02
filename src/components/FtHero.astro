@@ -1,50 +1,34 @@
 ---
-//HOME HOME HOME HOME HOME HOME HOME HOME HOME HOME
+//HERO de FICTION TRACK
+import backg from '../assets/ft-hero-back.png';
 
 
-import CieloAnimado from './CieloAnimado.astro';
-import OlasAnimadas from './OlasAnimadas.astro';
-import Arena from './Arena.astro';
-import Gaviota from './Gaviota.astro';
-import bird from '../assets/bird.png';
 
 ---
 
 <div id="container">
-    <CieloAnimado />
-    <Gaviota />	
-    <OlasAnimadas />
-    <Arena /> 
-    <main>
-        <section id="hero">
-            <p class="tag">UX · Motion · Performance</p>
-            <h1>Cristina Elizabeth Valdiviezo</h1>
-            <h2>Thinking, designing and making it work</h2>
-        </section>
-    </main>
+
+	<img src={backg.src} width="1280" height="832" alt="Fiction Track App" />	 
+    
+
+	
 </div>
 
 <style>
-
-	#container{
-
-		 position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden; /* tanto x como y */
-		
-	}
-
+    .container{
+        position: absolute;
+         z-index: 0;
+    }
 	main{
-	    position: relative; /* no absolute, para que esté en el flujo */
-    width: 100%;
-    height: 100vh;
-    margin: 0 auto;
-    z-index: 3;
-    display: flex;
-    justify-content: center;
-    font-family: 'Inter';
-    cursor: url(${bird.src}) 32 16, auto;
+		width: 100%;
+		height: calc(100vh - 60px);
+		margin: 0 auto;
+		z-index: 3;
+		display: flex;
+		justify-content: center;
+		font-family: 'Inter';
+        z-index: 1;
+		
 		
 	}
 
@@ -111,6 +95,14 @@ import bird from '../assets/bird.png';
 		align-items: center;
 		
 	}
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        top: -100;
+        left: 0;
+    }
 
 	
 	#botones{
@@ -134,29 +126,4 @@ import bird from '../assets/bird.png';
 		text-decoration: none;
 
 	}
-
-@media (max-width: 768px) {
-    main {
-        height: calc(100vh - 60px);
-        padding: 0;
-        align-items: center;
-		overflow-x: hidden; 
-    }
-
-    #hero {
-        text-align: center;
-        padding: 0 0.5rem;
-        gap: 0.5rem;
-    }
-
-    
-        #container {
-			width: 100%;
-			overflow-x: hidden;
-		
-		
-			
-		}
-   
-}
 </style>

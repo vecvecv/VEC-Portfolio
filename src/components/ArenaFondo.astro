@@ -1,0 +1,61 @@
+---
+
+---
+
+<div class="arena-transicion">
+    <!-- Partículas de arena -->
+    <div class="particulas-arena">
+      {Array.from({length: 50}).map((_, i) => (
+        <div class="particula" style={`
+          left: ${Math.random() * 100}%;
+          bottom: ${Math.random() * 100}%;
+          width: ${Math.random() * 4 + 1}px;
+          height: ${Math.random() * 4 + 1}px;
+          opacity: ${Math.random() * 0.5 + 0.3};
+          animation-delay: ${Math.random() * 5}s;
+        `} />
+      ))}
+    </div>
+  </div>
+  
+  <style>
+    .arena-transicion {
+      position: absolute;
+    
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(to bottom, 
+        rgb(232, 200, 140),
+        rgb(230, 170, 61) 70%
+      );
+      z-index: -1;
+      pointer-events: none;
+      overflow-x: hidden; 
+    }
+
+
+  
+    .particulas-arena {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .particula {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: flotar-arena 8s infinite ease-in-out;
+    }
+  
+    @keyframes flotar-arena {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-15px) translateX(5px);
+      }
+    }
+  </style>

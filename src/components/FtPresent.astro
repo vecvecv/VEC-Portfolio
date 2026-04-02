@@ -1,0 +1,142 @@
+---
+//HERO de FICTION TRACK+
+
+import Huellas from './FtHuellas.astro';
+
+
+---
+
+<div id="container">
+
+	
+	<main>
+		<Huellas /> 
+		<section id="presentac">
+
+			<p class="tag">An app that turns steps into progress </p>
+			<h1>
+				FICTION TRACK
+			<h1>
+			<h2>Audiobooks that play only while you walk</h2>
+			<p>A prototype designed to combat a sedentary lifestyle through habit formation, combining technology, motivation, and well-being.
+			</p>
+
+		</section>
+
+
+	</main>
+
+	
+</div>
+
+<style>
+
+	main{
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter';
+    position: relative; /* ← esto contiene el SVG absoluto */
+    overflow: hidden;   /* ← esto evita que se salga */
+    padding: 0;
+    box-sizing: border-box;
+		
+	}
+
+
+	#presentac{
+		z-index: 4;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: center;
+		align-items: center;
+		
+	}
+
+
+	
+	p{
+		font-family: 'Inter';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16px;
+		color: #140213;
+		letter-spacing: 0.04em;
+		text-decoration: none;
+		color:#7D92FF;
+		text-shadow: 0px 0px 7px #ffffff;
+	}
+
+	 .tag {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 1;
+    margin-bottom: 12px;
+	color:#7D92FF;
+	text-shadow: 0px 0px 7px #ffffff;
+  }
+
+  h1 {
+	
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin: 0;
+    font-weight: 700;
+	opacity: 1;
+	color:#7D92FF;
+	text-shadow: 0px 0px 100px #ffffff;
+  }
+
+  h2 {
+
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    margin-top: 10px;
+    font-weight: 400;
+    opacity: 1;
+	color:#ffffff;
+	text-shadow: 0px 0px 7px #7D92FF;
+	background-color: #7D92FF;
+	padding: 3px 20px;
+	border-radius: 15px;
+  }
+
+
+@media (max-width: 768px) {
+    main {
+        height: auto;
+        min-height: 75vh;
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        box-sizing: border-box;
+    }
+
+    #presentac {
+        width: 100%;
+        text-align: center;
+        padding: 0 0.5rem;
+        gap: 0.75rem;
+    }
+
+    h1 {
+        word-break: break-word;
+    }
+
+    h2 {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        padding: 3px 12px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 26px;
+        max-width: 90%;
+        text-align: center;
+    }
+}
+ 
+    
+</style>

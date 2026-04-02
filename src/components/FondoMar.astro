@@ -1,0 +1,106 @@
+---
+
+// Generamos un array de 20 elementos para las burbujas
+const burbujas = Array.from({ length: 20 }, (_, i) => i);
+
+
+---
+
+<div class="bajo-mar-container">
+  <!-- Fondo con degradado exacto -->
+  <div class="fondo-marino"></div>
+  
+  <!-- Burbujas animadas -->
+  <div class="burbujas">
+    {burbujas.map((_, i) => {
+      const size = Math.random() * 20 + 5; // Tamaño entre 5px y 25px
+      const delay = Math.random() * 5; // Retraso aleatorio hasta 5s
+      const duration = Math.random() * 15 + 10; // Duración entre 10s y 25s
+      const left = Math.random() * 100; // Posición horizontal aleatoria
+      const opacity = Math.random() * 0.5 + 0.3; // Opacidad entre 0.3 y 0.8
+      
+      return (
+        <div 
+          class="burbuja"
+          style={`
+            --size: ${size}px;
+            --left: ${left}%;
+            --delay: ${delay}s;
+            --duration: ${duration}s;
+            --opacity: ${opacity};
+          `}
+        />
+      );
+    })}
+  </div>
+  
+</div>
+
+<style>
+  /* Contenedor principal */
+  .bajo-mar-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la pantalla */
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  /* Fondo con degradado exacto */
+  .fondo-marino {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      179deg, /* Angulo horizontal como pediste */
+      #E7AB3D 0%,    /* Amarillo dorado */
+      #905BA4 31%,   /* Morado */
+      #4617FF 100%   /* Azul intenso */
+    );
+  }
+
+  /* Contenedor de burbujas */
+  .burbujas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Estilo individual de cada burbuja */
+  .burbuja {
+    position: absolute;
+    bottom: -50px; /* Comienzan debajo del área visible */
+    left: var(--left);
+    width: var(--size);
+    height: var(--size);
+    background: rgba(255, 255, 255, var(--opacity));
+    border-radius: 50%;
+    animation: subir var(--duration) ease-in infinite;
+    animation-delay: var(--delay);
+    filter: blur(1px);
+    will-change: transform, opacity; /* Optimización de rendimiento */
+  }
+
+  /* Animación de ascenso */
+  @keyframes subir {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0;
+    }
+    20% {
+      opacity: var(--opacity); /* Aparecen rápidamente */
+    }
+    90% {
+      opacity: 0.2; /* Comienzan a desaparecer */
+    }
+    100% {
+      transform: translateY(-120vh) scale(1.2); /* Suben y crecen */
+      opacity: 0; /* Desaparecen completamente */
+    }
+  }
+</style>

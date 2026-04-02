@@ -1,0 +1,79 @@
+---
+
+---
+
+<div class="olas-container">
+  <svg class="olas" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+   
+    <path d="M35 46.5C-19.4 28.5 -72.3333 39 -92 46.5C-109.667 64.3333 -146.9 104 -154.5 120C-164 140 -169 175.5 -209.5 263.5C-250 351.5 -207.5 373.5 -200 423.5C-192.5 473.5 -139.5 524.5 -130.5 531.5C-121.5 538.5 1680.5 504 1693.5 498.5C1703.9 494.1 1722.5 446.667 1730.5 423.5L1818.5 247C1836.17 187 1867.1 65.2 1849.5 58C1827.5 49 1754 98 1706.5 100C1659 102 1532 10 1504.5 1.00001C1477 -7.99999 1445.5 46.5 1412.5 67C1379.5 87.5 1199.5 67 1157 46.5C1114.5 26 788 46.5 690.5 67C593 87.5 452 35.5 393 23C334 10.5 240.5 30 161.5 46.5C82.5 63 103 69 35 46.5Z" fill="url(#paint0_linear_2_3)"  opacity="0.5"  transform="translate(0 5)" />
+<defs>
+<linearGradient id="paint0_linear_2_3" x1="813.993" y1="0.00543213" x2="813.993" y2="532.433" gradientUnits="userSpaceOnUse">
+<stop stop-color="#925C9C"/>
+<stop offset="1" stop-color="#FDEFFF"/>
+</linearGradient>
+</defs>
+
+<path d="M35 46.5C-19.4 28.5 -72.3333 39 -92 46.5C-109.667 64.3333 -146.9 104 -154.5 120C-164 140 -169 175.5 -209.5 263.5C-250 351.5 -207.5 373.5 -200 423.5C-192.5 473.5 -139.5 524.5 -130.5 531.5C-121.5 538.5 1680.5 504 1693.5 498.5C1703.9 494.1 1722.5 446.667 1730.5 423.5L1818.5 247C1836.17 187 1867.1 65.2 1849.5 58C1827.5 49 1754 98 1706.5 100C1659 102 1532 10 1504.5 1.00001C1477 -7.99999 1445.5 46.5 1412.5 67C1379.5 87.5 1199.5 67 1157 46.5C1114.5 26 788 46.5 690.5 67C593 87.5 452 35.5 393 23C334 10.5 240.5 30 161.5 46.5C82.5 63 103 69 35 46.5Z" fill="url(#paint0_linear_2_3)" opacity="0.25" transform="translate(0 30)" />
+<defs>
+<linearGradient id="paint0_linear_2_3" x1="813.993" y1="0.00543213" x2="813.993" y2="532.433" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F9E1E3"/>
+<stop offset="1" stop-color="#7A3A94"/>
+</linearGradient>
+</defs>    
+
+<path d="M1614.5 280.5C1702.5 300.9 1744.17 279.333 1754 266L1824 198C1723.5 169.833 1507.5 110.9 1447.5 100.5C1372.5 87.5 793.5 10.5 747.5 1.50002C701.5 -7.49998 25.5 67.5 2 71C-16.8 73.8 -193.167 146.833 -279 183V266C-253.333 287.333 -196.5 331.5 -174.5 337.5C-147 345 -64.5 313.5 -31 299C2.5 284.5 68 256.5 106.5 233C145 209.5 338 245.5 396.5 256.5C455 267.5 685 302.5 723.5 299C762 295.5 898 238.5 946 218C994 197.5 1151.5 216.5 1177.5 218C1203.5 219.5 1357.5 190.5 1379.5 198C1401.5 205.5 1504.5 255 1614.5 280.5Z" fill="url(#paint0_linear_2_4)" opacity="0.7" transform="translate(0 50)"  />
+<defs>
+<linearGradient id="paint0_linear_2_4" x1="772.5" y1="0.750916" x2="772.5" y2="338.638" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F9E1E3"/>
+    <stop offset="1" stop-color="#7A3A94"/>
+</linearGradient>
+</defs>
+
+  </svg>
+
+
+ <!-- Espuma básica sin animación compleja -->
+ <div class="espuma-simple"></div>
+</div>
+
+<style>
+  .olas-container {
+     position: absolute;
+    bottom: 25vh;
+    left: 0;
+    width: 100%;
+    height: 25vh;
+    overflow: hidden; /* ya lo tenías, bien */
+    z-index: -1;
+  }
+
+  .olas {
+  position: absolute;
+    bottom: 0;
+    left: -50%; /* ← compensá el ancho extra acá */
+    width: 200%;
+    height: 100%;
+    animation: wave 10s linear infinite alternate-reverse;
+  }
+
+  .espuma-simple {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: rgb(240, 221, 241);
+    border-radius: 50% 50% 0 0;
+    filter: blur(5px);
+    transform: translateY(50%);
+  }
+
+  @keyframes wave {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-20%);
+    }
+  }
+</style>
