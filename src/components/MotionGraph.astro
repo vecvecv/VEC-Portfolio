@@ -70,7 +70,7 @@ const base = import.meta.env.BASE_URL;
     left: 0;
     /* ajustá según necesites: */
     width: 70%;
-    height: 250%;
+    height: auto;
     object-fit: contain;
   }   
     .descripcion{
@@ -173,20 +173,23 @@ h1{
     }
 
     .imagen {
-        width: 85%;
+            width: 85%;
         margin-top: 0;
         position: relative;
         order: 2;
-        min-height: 400px;
+        height: 500px;        /* altura fija en vez de min-height */
+        overflow: hidden;     /* cortá lo que se desborde */
     }
 
     .overlay {
-        position: relative;
-        width: 100%;
-        height: auto;
+              position: absolute;
+        width: 80%;
+        height: 100%;
         object-fit: contain;
-        top: auto;
+        top: 0;
+        right: 0;
         left: auto;
+        z-index: 1;
     }
 
     .button {
